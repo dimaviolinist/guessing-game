@@ -11,10 +11,7 @@ class GuessingGame {
     this.diff = this.max - this.currentAnswer; 
   }
 
-  guess() {
-    //console.log(this.lastAnswer);
-    //console.log(this.currentAnswer);
-    console.log(this.diff);
+  guess() {    
     this.lastAnswer = this.currentAnswer;
     return this.currentAnswer;
   }

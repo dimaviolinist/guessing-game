@@ -7,7 +7,7 @@ class GuessingGame {
     this.min = min;
     this.max = max;
     this.lastAnswer = max; 
-    this.currentAnswer = Math.ceil(this.max / 2); 
+    this.currentAnswer = Math.floor(this.max / 2); 
     this.diff = this.max - this.currentAnswer; 
   }
 
@@ -17,12 +17,12 @@ class GuessingGame {
   }
 
   lower() {
-    this.diff = Math.floor(this.diff / 2);
+    this.diff = Math.ceil(this.diff / 2);
     this.currentAnswer = this.lastAnswer - this.diff;
   }
 
   greater() {
-    this.diff = Math.floor(this.diff / 2);
+    this.diff = Math.ceil(this.diff / 2);
     this.currentAnswer = this.lastAnswer + this.diff;
   }
 }

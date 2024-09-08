@@ -17,12 +17,12 @@ class GuessingGame {
   }
 
   lower() {
-    this.diff = Math.ceil(this.diff / 2);
+    this.diff = Math.floor(this.diff / 2);
     this.currentAnswer = this.lastAnswer - this.diff;
   }
 
   greater() {
-    this.diff = Math.ceil(this.diff / 2);
+    this.diff = Math.floor(this.diff / 2);
     this.currentAnswer = this.lastAnswer + this.diff;
   }
 }

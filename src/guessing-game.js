@@ -5,25 +5,20 @@ class GuessingGame {
 
   setRange(min, max) {
     this.min = min;
-    this.max = max;
-    this.lastAnswer = max; 
-    this.currentAnswer = Math.floor(this.max / 2); 
-    this.diff = this.max - this.currentAnswer; 
+    this.max = max;  
   }
 
   guess() {    
-    this.lastAnswer = this.currentAnswer;
-    return this.currentAnswer;
+    this.lastAnswer = Math.ceil((this.min + this.max) / 2);
+    return this.lastAnswer;
   }
 
   lower() {
-    this.diff = Math.ceil(this.diff / 2);
-    this.currentAnswer = this.lastAnswer - this.diff;
+    this.max =  this.lastAnswer;
   }
 
   greater() {
-    this.diff = Math.ceil(this.diff / 2);
-    this.currentAnswer = this.lastAnswer + this.diff;
+    this.min =  this.lastAnswer;
   }
 }
 module.exports = GuessingGame;
